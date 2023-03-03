@@ -1,15 +1,8 @@
 import "./style.css";
 
-const CurrencyForm = ({ currency }) => (
-  <form>
-    <label>
-      Coś tam
-      <select value={currency.filter(currency=>currency.name==="Euro").name}>
-        {currency.map((currency) => (
-          <option>{currency.name}</option>
-        ))}
-      </select>
-    </label>
+const CurrencyForm = ({ children, calculateRate }) => (
+  <form className="form__currencyChoice" onChange={calculateRate}>    
+      {children}
   </form>
 );
 

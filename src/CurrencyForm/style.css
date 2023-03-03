@@ -1,0 +1,9 @@
+.form__currencyChoice {
+  font-size: 20px;
+  padding: 10px;
+  background-color: rgba(0, 0, 0, 0.548);
+  color: white;
+  text-align: center;
+  display: flex;
+  justify-content: space-between;
+}
