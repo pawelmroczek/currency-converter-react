@@ -1,7 +1,7 @@
 import "./style.css";
 
-const CurrencyForm = ({ children, calculateRate }) => (
-  <form className="form__currencyChoice" onChange={calculateRate}>    
+const CurrencyForm = ({ children }) => (
+  <form className="form__currencyChoice" >    
       {children}
   </form>
 );
