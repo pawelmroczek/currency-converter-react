@@ -19,7 +19,7 @@ const ExchangeForm = ({ currency, rate }) => {
         ⬇
         <br />
         <label>
-          <input type="number" className="form__input" disabled value={rate*inputValue} />
+          <input type="number" className="form__input" disabled value={(rate*inputValue).toFixed(2)} />
         </label>
         <span className="form__currencySymbol">
           {currency.find((curr) => curr.output).short}

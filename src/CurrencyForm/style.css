@@ -7,3 +7,10 @@
   display: flex;
   justify-content: space-between;
 }
+
+@media (max-width: 767px){
+  .form__currencyChoice{
+    flex-direction: column;
+    gap: 10px;
+  }
+}
