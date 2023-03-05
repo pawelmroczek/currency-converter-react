@@ -3,6 +3,8 @@ import Header from "./Header";
 import CurrencyForm from "./CurrencyForm";
 import Select from "./Select";
 import RateLabel from "./RateLabel";
+import ExchangeForm from "./ExchangeForm";
+import Footer from "./Footer";
 
 function App() {
   const [currency, setNewCurrency] = useState([
@@ -10,7 +12,7 @@ function App() {
       id: 0,
       name: "Polski złoty",
       short: "PLN",
-      input: false,
+      input: true,
       output: false,
       toPLN: 1,
     },
@@ -18,7 +20,7 @@ function App() {
       id: 1,
       name: "Euro",
       short: "EUR",
-      input: true,
+      input: false,
       output: false,
       toPLN: 4.7085,
     },
@@ -40,17 +42,15 @@ function App() {
     },
   ]);
 
-  const calculateRate=()=>{
-    const inputRate=currency.find(curr=>curr.input).toPLN;
-    const outputRate=currency.find(curr=>curr.output).toPLN;
-    return (inputRate/outputRate).toFixed(2)
-  }
-  
+  const calculateRate = () => {
+    const inputRate = currency.find((curr) => curr.input).toPLN;
+    const outputRate = currency.find((curr) => curr.output).toPLN;
+    return (inputRate / outputRate).toFixed(2);
+  };
 
-  let rate=calculateRate();
+  let rate = calculateRate();
 
   const changeCurrencyInput = (id) => {
-    
     setNewCurrency((currency) =>
       currency.map((curr) => {
         if (curr.id == id) {
@@ -59,40 +59,29 @@ function App() {
         return { ...curr, input: false };
       })
     );
-    rate=calculateRate();
+    rate = calculateRate();
   };
 
   const changeCurrencyOutput = (id) => {
-    
-    
     setNewCurrency((currency) =>
       currency.map((curr) => {
         if (curr.id == id) {
           return { ...curr, output: true };
         }
-
         return { ...curr, output: false };
       })
     );
-    rate=calculateRate();
+    rate = calculateRate();
   };
 
   const onInputChange = ({ target }) => {
-    
     changeCurrencyInput(target.value);
   };
 
   const onOutputChange = ({ target }) => {
-    
     changeCurrencyOutput(target.value);
-   
   };
 
-  
-
-  
-
-  
   return (
     <>
       <Header />
@@ -112,17 +101,9 @@ function App() {
           />
           <RateLabel rate={rate} />
         </CurrencyForm>
-
-        <button
-          onClick={() => {
-            console.log(currency);
-            
-            console.log(rate)
-          }}
-        >
-          Check
-        </button>
+        <ExchangeForm currency={currency} rate={rate}/>
       </main>
+      <Footer/>
     </>
   );
 }
