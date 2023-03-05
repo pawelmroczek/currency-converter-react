@@ -29,7 +29,7 @@ To use the application, simply navigate to the [currency converter page](https:/
 
 Here is a screenshot of the currency converter page:
 
-![Screenshot of the Currency Converter page](images/ssOfPage.png)
+![Screenshot of the Currency Converter page](src/images/ssOfPage.png)
 
 Thank you for using the Currency Converter!
 
