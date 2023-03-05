@@ -1,6 +1,37 @@
-# Getting Started with Create React App
+# Currency Converter
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This project is a currency converter web application built with React, using JSX syntax. The application allows users to input an amount of money and convert it to a different currency based on the currency rate entered by the user.
+
+## Table of Contents
+
+- [Technologies Used](#technologies-used)
+- [Usage](#usage)
+- [Screenshots](#screenshots)
+
+## Technologies Used
+
+The following technologies were used in this project:
+
+- React
+- JSX
+- BEM
+- normalize.css
+- Open Graph
+
+## Usage
+
+To use the application, simply navigate to the [currency converter page](https://pawelmroczek.github.io/currency-converter-react/) and follow these steps:
+
+1. Input an amount of money you wish to convert
+2. Select the currency you wish to convert from using the dropdown menu
+
+## Screenshots
+
+Here is a screenshot of the currency converter page:
+
+![Screenshot of the Currency Converter page](images/ssOfPage.png)
+
+Thank you for using the Currency Converter!
 
 ## Available Scripts
 
@@ -13,11 +44,6 @@ Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
 
 The page will reload when you make changes.\
 You may also see any lint errors in the console.
-
-### `npm test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
 
 ### `npm run build`
 
