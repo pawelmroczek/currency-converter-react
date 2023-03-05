@@ -1,6 +1,6 @@
 import "./style.css";
 
-const Select = ({ header,currency, onSelectChange, input }) => (
+const Select = ({ header, currency, onSelectChange, input }) => (
   <label>
     {header}
     <select

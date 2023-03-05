@@ -1,7 +1,5 @@
-import "./style.css"
+import "./style.css";
 
-const Footer=()=>(
-  <footer className="footer">© Paweł Mroczek 2022</footer>
-)
+const Footer = () => <footer className="footer">© Paweł Mroczek 2022</footer>;
 
-export default Footer
+export default Footer;

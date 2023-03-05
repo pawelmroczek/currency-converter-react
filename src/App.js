@@ -101,9 +101,9 @@ function App() {
           />
           <RateLabel rate={rate} />
         </CurrencyForm>
-        <ExchangeForm currency={currency} rate={rate}/>
+        <ExchangeForm currency={currency} rate={rate} />
       </main>
-      <Footer/>
+      <Footer />
     </>
   );
 }
