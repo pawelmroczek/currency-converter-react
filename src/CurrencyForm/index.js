@@ -1,7 +1,7 @@
 import "./style.css";
 
 const CurrencyForm = ({ children }) => (
-  <form className="form__currencyChoice" >    
+  <form className="currencyChoice" >    
       {children}
   </form>
 );

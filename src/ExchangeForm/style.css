@@ -1,4 +1,4 @@
-.form__exchange {
+.exchangeForm__exchange {
   font-size: 35px;
   margin: 50px auto;
   text-align: center;
@@ -8,13 +8,13 @@
   padding: 30px;
 }
 
-.form__input {
+.exchangeForm__input {
   width: 150px;
   height: 80px;
   margin-top: 20px;
   padding: 0px 0px 0px 10px;
 }
 
-.form__currencySymbol {
+.exchangeForm__currencySymbol {
   color: rgb(107, 107, 107);
 }

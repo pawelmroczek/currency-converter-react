@@ -2,27 +2,29 @@ import { useState } from "react";
 import "./style.css";
 
 const ExchangeForm = ({ currency, rate }) => {
-  const [inputValue,setInput]=useState(0);
+  const [inputValue, setInput]=useState(0);
+  const inputCurrency = currency.find((curr) => curr.input).short
+  const outputCurrency = currency.find((curr) => curr.output).short
 
   return (
-    <div className="form__exchange">
+    <div className="exchangeForm__exchange">
       <form>
         <label>
           Kwota do przeliczenia:
           <br />
-          <input type="number" className="form__input" min="0" value={inputValue} onChange={({target})=>setInput(inputValue=>inputValue=target.value)}/>
+          <input type="number" className="exchangeForm__input" min="0" value={inputValue} onChange={({target})=>setInput(inputValue=>inputValue=target.value)}/>
         </label>
-        <span className="form__currencySymbol">
-          {currency.find((curr) => curr.input).short}
+        <span className="exchangeForm__currencySymbol">
+          {inputCurrency}
         </span>
         <br />
         ⬇
         <br />
         <label>
-          <input type="number" className="form__input" disabled value={(rate*inputValue).toFixed(2)} />
+          <input type="number" className="exchangeForm__input" disabled value={(rate*inputValue).toFixed(2)} />
         </label>
-        <span className="form__currencySymbol">
-          {currency.find((curr) => curr.output).short}
+        <span className="exchangeForm__currencySymbol">
+          {outputCurrency}
         </span>
       </form>
     </div>

@@ -4,7 +4,7 @@ const Select = ({ header, currency, onSelectChange, input }) => (
   <label>
     {header}
     <select
-      className="form__choice"
+      className="select"
       value={
         input
           ? currency.find((curr) => curr.input).id
