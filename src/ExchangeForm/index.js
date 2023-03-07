@@ -1,11 +1,13 @@
 import { useState } from "react";
 import "./style.css";
 
-const ExchangeForm = ({ inputCurrency, outputCurrency, rate }) => {
+const ExchangeForm = ({ inputCurrency, outputCurrency, rate ,time}) => {
   const [inputValue, setInput] = useState(0);
 
   return (
+    
     <div className="exchangeForm__exchange">
+      <div className="exchangeForm__time">Dziś jest{time}</div>
       <form>
         <div>
           {" "}

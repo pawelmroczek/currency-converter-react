@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import Header from "./Header";
 import CurrencyForm from "./CurrencyForm";
 import Select from "./Select";
@@ -10,6 +10,42 @@ import currencyTable from "./currency";
 function App() {
   const [inputCurrency, setInputCurrency] = useState("PLN");
   const [outputCurrency, setOutputCurrency] = useState("USD");
+
+  const [time, newTime] = useState(
+    ` ${new Date().toLocaleDateString("pl-PL", {
+      weekday: "long",
+      year: "numeric",
+      month: "long",
+      day: "numeric",
+    })},  ${new Date().toLocaleString("pl-PL", {
+      hour: "2-digit",
+      minute: "2-digit",
+      second: "2-digit",
+    })}`
+  );
+
+  useEffect(() => {
+    const clock = setInterval(() => {
+      const date=new Date()
+      const formatedDate = newTime(
+        (time) =>
+          (time = ` ${date.toLocaleDateString("pl-PL", {
+            weekday: "long",
+            year: "numeric",
+            month: "long",
+            day: "numeric",
+          })},  ${date.toLocaleString("pl-PL", {
+            hour: "2-digit",
+      minute: "2-digit",
+      second: "2-digit",
+          })}`)
+      );
+    }, 1000);
+
+    return () => {
+      clearInterval(clock);
+    };
+  });
 
   const calculateRate = () => {
     const inputRate = currencyTable.find(
@@ -64,6 +100,7 @@ function App() {
           <RateLabel rate={calculateRate()} />
         </CurrencyForm>
         <ExchangeForm
+          time={time}
           inputCurrency={inputCurrency}
           outputCurrency={outputCurrency}
           rate={calculateRate()}
