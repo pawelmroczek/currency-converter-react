@@ -1,18 +1,14 @@
 import "./style.css";
 
-const Select = ({ header, currency, onSelectChange, input }) => (
+const Select = ({ header, actuall, onSelectChange, currencyTable }) => (
   <label>
     {header}
     <select
       className="select"
-      value={
-        input
-          ? currency.find((curr) => curr.input).id
-          : currency.find((curr) => curr.output).id
-      }
+      value={currencyTable.find((curr) => curr.short === actuall).id}
       onChange={onSelectChange}
     >
-      {currency.map((curr) => (
+      {currencyTable.map((curr) => (
         <option key={curr.id} value={curr.id}>
           {curr.name}[{curr.short}]
         </option>
