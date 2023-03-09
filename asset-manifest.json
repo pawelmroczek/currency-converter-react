@@ -1,16 +1,16 @@
 {
   "files": {
-    "main.css": "/currency-converter-react/static/css/main.a141306c.css",
-    "main.js": "/currency-converter-react/static/js/main.4760c655.js",
+    "main.css": "/currency-converter-react/static/css/main.56600c91.css",
+    "main.js": "/currency-converter-react/static/js/main.10f6c15b.js",
     "static/js/787.2dbbe128.chunk.js": "/currency-converter-react/static/js/787.2dbbe128.chunk.js",
     "static/media/Money-background-design-in-blue-color-Graphics-6551970-1.jpeg": "/currency-converter-react/static/media/Money-background-design-in-blue-color-Graphics-6551970-1.9d67d2d0b4ad8d5b130b.jpeg",
     "index.html": "/currency-converter-react/index.html",
-    "main.a141306c.css.map": "/currency-converter-react/static/css/main.a141306c.css.map",
-    "main.4760c655.js.map": "/currency-converter-react/static/js/main.4760c655.js.map",
+    "main.56600c91.css.map": "/currency-converter-react/static/css/main.56600c91.css.map",
+    "main.10f6c15b.js.map": "/currency-converter-react/static/js/main.10f6c15b.js.map",
     "787.2dbbe128.chunk.js.map": "/currency-converter-react/static/js/787.2dbbe128.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.a141306c.css",
-    "static/js/main.4760c655.js"
+    "static/css/main.56600c91.css",
+    "static/js/main.10f6c15b.js"
   ]
 }
