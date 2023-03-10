@@ -23,7 +23,7 @@ export const Clock = () => {
     return () => {
       clearInterval(clock);
     };
-  });
+  },[]);
 
   return (
     <div className="time">Dziś jest {formatedDate(time)} </div>
