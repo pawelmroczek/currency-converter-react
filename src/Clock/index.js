@@ -26,6 +26,6 @@ export const Clock = () => {
   });
 
   return (
-    <div className="exchangeForm__time">Dziś jest {formatedDate(time)} </div>
+    <div className="time">Dziś jest {formatedDate(time)} </div>
   );
 };
