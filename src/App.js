@@ -12,8 +12,6 @@ function App() {
   const [inputCurrency, setInputCurrency] = useState("PLN");
   const [outputCurrency, setOutputCurrency] = useState("USD");
 
-  
-
   const calculateRate = () => {
     const inputRate = currencyTable.find(
       (curr) => curr.short === inputCurrency
@@ -67,7 +65,7 @@ function App() {
           <RateLabel rate={calculateRate()} />
         </CurrencyForm>
         <ExchangeForm
-          time={<Clock/>}
+          time={<Clock />}
           inputCurrency={inputCurrency}
           outputCurrency={outputCurrency}
           rate={calculateRate()}

@@ -1,16 +1,14 @@
 import { useState } from "react";
 import "./style.css";
 
-const ExchangeForm = ({ inputCurrency, outputCurrency, rate ,time}) => {
+const ExchangeForm = ({ inputCurrency, outputCurrency, rate, time }) => {
   const [inputValue, setInput] = useState(0);
 
   return (
-    
     <div className="exchangeForm__exchange">
       {time}
       <form>
         <div>
-      
           <label>
             Kwota do przeliczenia:
             <br />
