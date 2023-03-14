@@ -8,6 +8,8 @@ import Footer from "./Footer";
 import currencyTable from "./currency";
 import { Clock } from "./Clock";
 import { useCurrency } from "./useCurrency";
+import { ThemeProvider } from "styled-components";
+import {theme} from "./theme"
 
 function App() {
   const {
@@ -19,7 +21,7 @@ function App() {
   } = useCurrency(currencyTable);
 
   return (
-    <>
+    <ThemeProvider theme={theme}>
       <Header />
       <main>
         <CurrencyForm>
@@ -45,7 +47,7 @@ function App() {
         />
       </main>
       <Footer />
-    </>
+    </ThemeProvider>
   );
 }
 
