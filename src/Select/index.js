@@ -1,9 +1,9 @@
-import "./style.css";
+import { StyledSelect } from "./styled";
 
 const Select = ({ header, actuall, onSelectChange, currencyTable }) => (
   <label>
     {header}
-    <select
+    <StyledSelect
       className="select"
       value={currencyTable.find((curr) => curr.short === actuall).id}
       onChange={onSelectChange}
@@ -13,7 +13,7 @@ const Select = ({ header, actuall, onSelectChange, currencyTable }) => (
           {curr.name}[{curr.short}]
         </option>
       ))}
-    </select>
+    </StyledSelect>
   </label>
 );
 
