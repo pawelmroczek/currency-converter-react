@@ -1,20 +1,19 @@
 import { useState } from "react";
-import "./style.css";
+import { Symbol, Wrapper, Input } from "./styled";
 
 const ExchangeForm = ({ inputCurrency, outputCurrency, rate, time }) => {
   const [inputValue, setInput] = useState(0);
 
   return (
-    <div className="exchangeForm__exchange">
+    <Wrapper>
       {time}
-      <form>
+      <form> 
         <div>
           <label>
             Kwota do przeliczenia:
             <br />
-            <input
+            <Input
               type="number"
-              className="exchangeForm__input"
               min="0"
               value={inputValue}
               onChange={({ target }) =>
@@ -22,22 +21,21 @@ const ExchangeForm = ({ inputCurrency, outputCurrency, rate, time }) => {
               }
             />
           </label>
-          <span className="exchangeForm__currencySymbol">{inputCurrency}</span>
+          <Symbol>{inputCurrency}</Symbol>
         </div>
         ⬇
         <div>
           <label>
-            <input
+            <Input
               type="number"
-              className="exchangeForm__input"
               disabled
               value={(rate * inputValue).toFixed(2)}
             />
           </label>
-          <span className="exchangeForm__currencySymbol">{outputCurrency}</span>
+          <Symbol>{outputCurrency}</Symbol>
         </div>
       </form>
-    </div>
+    </Wrapper>
   );
 };
 
