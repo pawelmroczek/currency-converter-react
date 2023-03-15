@@ -1,9 +1,9 @@
-import "./style.css";
+import { StyledHeader, Title } from "./styled";
 
 const Header = () => (
-  <header className="header">
-    <h1 className="header__title">Konwerter walutowy</h1>
-  </header>
+  <StyledHeader>
+    <Title>Konwerter walutowy</Title>
+  </StyledHeader>
 );
 
 export default Header;
