@@ -1,5 +1,5 @@
-import "./style.css";
+import { StyledFooter } from "./styled";
 
-const Footer = () => <footer className="footer">© Paweł Mroczek 2022</footer>;
+const Footer = () => <StyledFooter>© Paweł Mroczek 2022</StyledFooter>;
 
 export default Footer;
