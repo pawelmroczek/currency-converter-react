@@ -1,7 +1,7 @@
-import "./style.css";
+import { Form } from "./styled";
 
 const CurrencyForm = ({ children }) => (
-  <form className="currencyChoice">{children}</form>
+  <Form >{children}</Form>
 );
 
 export default CurrencyForm;
