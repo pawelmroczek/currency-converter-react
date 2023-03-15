@@ -1,9 +1,9 @@
-import "./style.css";
+import { Rate } from "./styled";
 
 const RateLabel = ({ rate }) => (
   <label>
     Kurs:
-    <input className="rate" type="number" value={rate} disabled />
+    <Rate type="number" value={rate} disabled />
   </label>
 );
 
