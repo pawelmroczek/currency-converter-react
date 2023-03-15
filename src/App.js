@@ -9,7 +9,7 @@ import currencyTable from "./currency";
 import { Clock } from "./Clock";
 import { useCurrency } from "./useCurrency";
 import { ThemeProvider } from "styled-components";
-import {theme} from "./theme"
+import { theme } from "./theme";
 
 function App() {
   const {

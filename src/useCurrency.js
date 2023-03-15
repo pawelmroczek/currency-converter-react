@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-export const useCurrency=(currencyTable)=>{
+export const useCurrency = (currencyTable) => {
   const [inputCurrency, setInputCurrency] = useState("PLN");
   const [outputCurrency, setOutputCurrency] = useState("USD");
 
@@ -37,5 +37,11 @@ export const useCurrency=(currencyTable)=>{
     changeCurrencyOutput(target.value);
   };
 
-  return {inputCurrency,outputCurrency,calculateRate,onInputChange,onOutputChange}
-}
+  return {
+    inputCurrency,
+    outputCurrency,
+    calculateRate,
+    onInputChange,
+    onOutputChange,
+  };
+};

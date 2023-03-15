@@ -7,7 +7,7 @@ const ExchangeForm = ({ inputCurrency, outputCurrency, rate, time }) => {
   return (
     <Wrapper>
       {time}
-      <form> 
+      <form>
         <div>
           <label>
             Kwota do przeliczenia:

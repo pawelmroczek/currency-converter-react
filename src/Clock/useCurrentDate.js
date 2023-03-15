@@ -1,6 +1,6 @@
-import { useState,useEffect} from "react";
+import { useState, useEffect } from "react";
 
-export const useCurrentDate =()=>{
+export const useCurrentDate = () => {
   const [date, setDate] = useState(new Date());
 
   const formatedDate = (date) =>
@@ -25,4 +25,4 @@ export const useCurrentDate =()=>{
   }, []);
 
   return formatedDate(date);
-}
+};
