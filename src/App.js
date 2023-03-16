@@ -5,13 +5,20 @@ import Select from "./Select";
 import RateLabel from "./RateLabel";
 import ExchangeForm from "./ExchangeForm";
 import Footer from "./Footer";
-import currencyTable from "./currency";
+import { useAPI } from "./useAPI";
 import { Clock } from "./Clock";
 import { useCurrency } from "./useCurrency";
 import { ThemeProvider } from "styled-components";
 import { theme } from "./theme";
+import currencyTable from "./currency";
 
 function App() {
+  
+  const {currencyTable, problem,loaded}=useAPI();
+
+  console.log(problem);
+  console.log(loaded);
+
   const {
     inputCurrency,
     outputCurrency,

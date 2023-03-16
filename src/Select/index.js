@@ -5,7 +5,7 @@ const Select = ({ header, actuall, onSelectChange, currencyTable }) => (
     {header}
     <StyledSelect
       className="select"
-      value={currencyTable.find((curr) => curr.short === actuall).id}
+      value={currencyTable.find((curr) => curr.short === actuall)?.id}
       onChange={onSelectChange}
     >
       {currencyTable.map((curr) => (
