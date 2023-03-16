@@ -17,6 +17,8 @@ The following technologies were used in this project:
 - BEM
 - normalize.css
 - Open Graph
+- styled-components
+- own Hooks
 
 ## Usage
 
