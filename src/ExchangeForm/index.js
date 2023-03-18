@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { Symbol, Wrapper, Input } from "./styled";
 
-const ExchangeForm = ({ inputCurrency, outputCurrency, rate, time }) => {
+const ExchangeForm = ({ inputCurrency, outputCurrency, rate, time, date }) => {
   const [inputValue, setInput] = useState(0);
 
   return (
@@ -33,6 +33,9 @@ const ExchangeForm = ({ inputCurrency, outputCurrency, rate, time }) => {
             />
           </label>
           <Symbol>{outputCurrency}</Symbol>
+        </div>
+        <div> Kursy walut pobrane z Europejskiego Banku Centralnego <br/>
+        aktualne na dzień: <strong>{date}</strong>
         </div>
       </form>
     </Wrapper>

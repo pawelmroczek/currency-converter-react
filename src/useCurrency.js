@@ -7,25 +7,25 @@ export const useCurrency = (currencyTable) => {
   const calculateRate = () => {
     const inputRate = currencyTable.find(
       (curr) => curr.short === inputCurrency
-    ).toPLN;
+    )?.toPLN;
     const outputRate = currencyTable.find(
       (curr) => curr.short === outputCurrency
-    ).toPLN;
+    )?.toPLN;
 
-    return (inputRate / outputRate).toFixed(2);
+    return (outputRate/inputRate).toFixed(2);
   };
 
   const changeCurrencyInput = (id) => {
     setInputCurrency(
       (inputCurrency) =>
-        (inputCurrency = currencyTable.find((curr) => curr.id == id).short)
+        (inputCurrency = currencyTable.find((curr) => curr.id == id)?.short)
     );
   };
 
   const changeCurrencyOutput = (id) => {
     setOutputCurrency(
       (outputCurrency) =>
-        (outputCurrency = currencyTable.find((curr) => curr.id == id).short)
+        (outputCurrency = currencyTable.find((curr) => curr.id == id)?.short)
     );
   };
 

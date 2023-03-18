@@ -1,25 +1,34 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
-import currencyTable from "./currency";
+import currencyBase from "./currency";
 
 export const useAPI = () => {
   const [problem, setProblem] = useState(0);
-  const [loaded, setLoaded] = useState(0);
+  const [currencyTable,setCurrencyTable]=useState([]);
+  const [date,setNewDate]=useState("");
+
+ 
 
   useEffect(() => {
-    (async () => {
-      try {
-        const response = await axios.get(
-          "https://api.exchangerate.host/latest?base=PLN&symbols=USD,EUR,CHF"
-        );
-        console.log(response.data);
-        setTimeout(() => {
-          setLoaded(1);
-        }, 1000);
-      } catch (error) {
-        setProblem(1);
-      }
-    })();
+    setTimeout(() => {
+      (async () => {
+        try {
+          const response = await axios.get(
+            "https://api.exchangerate.host/latest?base=PLN&symbols=USD,EUR,CHF"
+          );
+          const rates = response.data.rates;
+          setNewDate(response.data.date);
+          setCurrencyTable(currencyBase.map(curr=>{
+            if(rates[curr.short]){
+              return{...curr,toPLN:rates[curr.short]}
+            }
+            return curr;
+          }))
+        } catch (error) {
+          setProblem(1);
+        }
+      })();
+            }, 1000);
   }, []);
-  return { currencyTable, problem, loaded };
+  return { currencyTable, problem,date};
 };

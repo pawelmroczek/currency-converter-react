@@ -1,4 +1,3 @@
-import { useEffect, useState } from "react";
 import Header from "./Header";
 import CurrencyForm from "./CurrencyForm";
 import Select from "./Select";
@@ -10,14 +9,10 @@ import { Clock } from "./Clock";
 import { useCurrency } from "./useCurrency";
 import { ThemeProvider } from "styled-components";
 import { theme } from "./theme";
-import currencyTable from "./currency";
 
 function App() {
   
-  const {currencyTable, problem,loaded}=useAPI();
-
-  console.log(problem);
-  console.log(loaded);
+  const {currencyTable, problem,date}=useAPI();
 
   const {
     inputCurrency,
@@ -27,35 +22,48 @@ function App() {
     onOutputChange,
   } = useCurrency(currencyTable);
 
-  return (
-    <ThemeProvider theme={theme}>
-      <Header />
-      <main>
-        <CurrencyForm>
-          <Select
-            header="Waluta wejściowa:"
-            actuall={inputCurrency}
-            currencyTable={currencyTable}
-            onSelectChange={onInputChange}
+  if(currencyTable.length){
+    return (
+      <ThemeProvider theme={theme}>
+        <Header />
+        <main>
+          <CurrencyForm>
+            <Select
+              header="Waluta wejściowa:"
+              actuall={inputCurrency}
+              currencyTable={currencyTable}
+              onSelectChange={onInputChange}
+            />
+            <Select
+              header="Waluta wyjściowa:"
+              currencyTable={currencyTable}
+              onSelectChange={onOutputChange}
+              actuall={outputCurrency}
+            />
+            <RateLabel rate={calculateRate()} />
+          </CurrencyForm>
+          <ExchangeForm
+            time={<Clock />}
+            inputCurrency={inputCurrency}
+            outputCurrency={outputCurrency}
+            rate={calculateRate()}
+            date={date}
           />
-          <Select
-            header="Waluta wyjściowa:"
-            currencyTable={currencyTable}
-            onSelectChange={onOutputChange}
-            actuall={outputCurrency}
-          />
-          <RateLabel rate={calculateRate()} />
-        </CurrencyForm>
-        <ExchangeForm
-          time={<Clock />}
-          inputCurrency={inputCurrency}
-          outputCurrency={outputCurrency}
-          rate={calculateRate()}
-        />
-      </main>
-      <Footer />
-    </ThemeProvider>
-  );
+        </main>
+        <Footer />
+      </ThemeProvider>
+    );
+  }else if(problem){
+    return(
+      <div>Chyba nie masz neta</div>
+    )
+  }
+  return(
+
+    <div>Sekundka, ładuje kursy walut z Banku Centralnego</div>
+  )
+
+  
 }
 
 export default App;
