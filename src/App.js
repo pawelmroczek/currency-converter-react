@@ -4,15 +4,13 @@ import Select from "./Select";
 import RateLabel from "./RateLabel";
 import ExchangeForm from "./ExchangeForm";
 import Footer from "./Footer";
+import Loading from "./Loading";
 import { useAPI } from "./useAPI";
 import { Clock } from "./Clock";
 import { useCurrency } from "./useCurrency";
-import { ThemeProvider } from "styled-components";
-import { theme } from "./theme";
 
 function App() {
-  
-  const {currencyTable, problem,date}=useAPI();
+  const { currencyTable, problem, date } = useAPI();
 
   const {
     inputCurrency,
@@ -22,9 +20,9 @@ function App() {
     onOutputChange,
   } = useCurrency(currencyTable);
 
-  if(currencyTable.length){
+  if (currencyTable.length) {
     return (
-      <ThemeProvider theme={theme}>
+      <>
         <Header />
         <main>
           <CurrencyForm>
@@ -51,19 +49,17 @@ function App() {
           />
         </main>
         <Footer />
-      </ThemeProvider>
+      </>
     );
-  }else if(problem){
-    return(
-      <div>Chyba nie masz neta</div>
-    )
+  } else if (problem) {
+    return <div>Chyba nie masz neta</div>;
   }
-  return(
-
-    <div>Sekundka, ładuje kursy walut z Banku Centralnego</div>
-  )
-
-  
+  return (
+    <>
+      <Header />
+      <Loading />
+    </>
+  );
 }
 
 export default App;

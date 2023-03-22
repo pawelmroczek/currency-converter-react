@@ -7,8 +7,6 @@ export const useAPI = () => {
   const [currencyTable,setCurrencyTable]=useState([]);
   const [date,setNewDate]=useState("");
 
- 
-
   useEffect(() => {
     setTimeout(() => {
       (async () => {
