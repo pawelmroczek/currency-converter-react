@@ -5,12 +5,13 @@ import RateLabel from "./RateLabel";
 import ExchangeForm from "./ExchangeForm";
 import Footer from "./Footer";
 import Loading from "./Loading";
+import Body from "./Body";
 import { useAPI } from "./useAPI";
 import { Clock } from "./Clock";
 import { useCurrency } from "./useCurrency";
 
 function App() {
-  const { currencyTable, problem, date } = useAPI();
+  const rateData = useAPI();
 
   const {
     inputCurrency,
@@ -18,9 +19,9 @@ function App() {
     calculateRate,
     onInputChange,
     onOutputChange,
-  } = useCurrency(currencyTable);
+  } = useCurrency(rateData.currency);
 
-  if (currencyTable.length) {
+  if (rateData.status==="loaded") {
     return (
       <>
         <Header />
@@ -29,12 +30,12 @@ function App() {
             <Select
               header="Waluta wejściowa:"
               actuall={inputCurrency}
-              currencyTable={currencyTable}
+              currencyTable={rateData.currency}
               onSelectChange={onInputChange}
             />
             <Select
               header="Waluta wyjściowa:"
-              currencyTable={currencyTable}
+              currencyTable={rateData.currency}
               onSelectChange={onOutputChange}
               actuall={outputCurrency}
             />
@@ -45,13 +46,13 @@ function App() {
             inputCurrency={inputCurrency}
             outputCurrency={outputCurrency}
             rate={calculateRate()}
-            date={date}
+            date={rateData.date}
           />
         </main>
         <Footer />
       </>
     );
-  } else if (problem) {
+  } else if (rateData.status==="error") {
     return <div>Chyba nie masz neta</div>;
   }
   return (
