@@ -1,6 +1,6 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
-import currencyBase from "../../currency";
+import currencyBase from "./CurrencyBlock/currency";
 
 export const useAPI = () => {
   const [rateData, setRateData] = useState({

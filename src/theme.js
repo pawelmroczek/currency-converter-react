@@ -5,6 +5,7 @@ export const theme = {
     doveGray: "rgb(107, 107, 107)",
     vistaWhite: "rgba(252, 248, 248, 0.651)",
     black:"black",
+    crimson:"crimson",
   },
   breakpoints: {
     phoneMedia: 767,
