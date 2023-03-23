@@ -1,14 +1,15 @@
 import Header from "./Header";
-import CurrencyForm from "./CurrencyForm";
-import Select from "./Select";
-import RateLabel from "./RateLabel";
-import ExchangeForm from "./ExchangeForm";
+import CurrencyForm from "./Body/CurrencyForm";
+import Select from "./Body/Select";
+import RateLabel from "./Body/RateLabel";
+import ExchangeForm from "./Body/ExchangeForm";
 import Footer from "./Footer";
-import Loading from "./Loading";
+import Loading from "../Loading";
 import Body from "./Body";
-import { useAPI } from "./useAPI";
-import { Clock } from "./Clock";
-import { useCurrency } from "./useCurrency";
+import { useAPI } from "./Body/useAPI";
+import { Clock } from "./Body/Clock";
+import { useCurrency } from "./Body/useCurrency";
+import { Main, Wrapper } from "./styled";
 
 function App() {
   const rateData = useAPI();
@@ -21,11 +22,11 @@ function App() {
     onOutputChange,
   } = useCurrency(rateData.currency);
 
-  if (rateData.status==="loaded") {
+  if (rateData.status === "loaded") {
     return (
-      <>
+      <Wrapper>
         <Header />
-        <main>
+        <Main>
           <CurrencyForm>
             <Select
               header="Waluta wejściowa:"
@@ -48,11 +49,12 @@ function App() {
             rate={calculateRate()}
             date={rateData.date}
           />
-        </main>
+        </Main>
+
         <Footer />
-      </>
+      </Wrapper>
     );
-  } else if (rateData.status==="error") {
+  } else if (rateData.status === "error") {
     return <div>Chyba nie masz neta</div>;
   }
   return (

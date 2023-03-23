@@ -1,9 +1,11 @@
 import styled from "styled-components";
 
 export const StyledHeader = styled.header`
+  width:100%;
   backdrop-filter: blur(10px);
   background-color: ${({ theme }) => theme.colors.darkerFillter};
   padding: 5px;
+
 `;
 
 export const Title = styled.h1`
