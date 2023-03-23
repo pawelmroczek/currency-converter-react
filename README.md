@@ -1,6 +1,6 @@
 # Currency Converter
 
-This project is a currency converter web application built with React, using JSX syntax. The application allows users to input an amount of money and convert it to a different currency based on the currency rate entered by the user.
+This project is a currency converter web application built with React, using JSX syntax. The application allows users to input an amount of money and convert it to a different currency based on the currency rate imported from API (https://api.exchangerate.host) .
 
 ## Table of Contents
 
@@ -19,6 +19,7 @@ The following technologies were used in this project:
 - Open Graph
 - styled-components
 - own Hooks
+- API
 
 ## Usage
 
