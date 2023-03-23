@@ -34,8 +34,13 @@ const ExchangeForm = ({ inputCurrency, outputCurrency, rate, time, date }) => {
           </label>
           <Symbol>{outputCurrency}</Symbol>
         </div>
-        <BankInfo> Kursy walut pobrane z <Span>Europejskiego Banku Centralnego</Span> <br/>
-        aktualne na dzień: <Span>{date}</Span>
+        <BankInfo>
+          {" "}
+          Kursy walut pobrane z <Span>
+            Europejskiego Banku Centralnego
+          </Span>{" "}
+          <br />
+          aktualne na dzień: <Span>{date}</Span>
         </BankInfo>
       </form>
     </>

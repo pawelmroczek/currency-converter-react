@@ -8,8 +8,8 @@ export const Form = styled.form`
   text-align: center;
   display: flex;
   justify-content: space-between;
-  align-self:flex-start;
-  width:100%;
+  align-self: flex-start;
+  width: 100%;
 
   @media (max-width: ${({ theme }) => theme.breakpoints.phoneMedia}px) {
     flex-direction: column;

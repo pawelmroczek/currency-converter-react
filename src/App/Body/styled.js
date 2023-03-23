@@ -8,19 +8,21 @@ export const Wrapper = styled.div`
   backdrop-filter: blur(2px);
   width: 80%;
   padding: 30px;
-  flex-grow:0;
-`
+  flex-grow: 0;
+`;
 
 export const StatusDiv = styled(Wrapper)`
-display:flex;
-flex-direction:column;
-justify-content:center;
-align-items:center;
-margin-top:50px;
-font-size:20px;
-height:80%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: 50px;
+  font-size: 20px;
+  height: 80%;
 
-${({problem})=>problem&& css`
-  color:${({theme})=>theme.colors.crimson};
-`}
-`
+  ${({ problem }) =>
+    problem &&
+    css`
+      color: ${({ theme }) => theme.colors.crimson};
+    `}
+`;

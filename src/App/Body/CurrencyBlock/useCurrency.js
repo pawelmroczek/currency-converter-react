@@ -12,7 +12,7 @@ export const useCurrency = (currencyTable) => {
       (curr) => curr.short === outputCurrency
     )?.toPLN;
 
-    return (outputRate/inputRate).toFixed(2);
+    return (outputRate / inputRate).toFixed(2);
   };
 
   const changeCurrencyInput = (id) => {

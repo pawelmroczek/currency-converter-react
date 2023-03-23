@@ -2,7 +2,14 @@ import { Form } from "./styled";
 import Select from "../Select";
 import RateLabel from "../RateLabel";
 
-const CurrencyForm = ({inputCurrency,onInputChange,outputCurrency,onOutputChange,calculateRate,rateData}) => (
+const CurrencyForm = ({
+  inputCurrency,
+  onInputChange,
+  outputCurrency,
+  onOutputChange,
+  calculateRate,
+  rateData,
+}) => (
   <Form>
     <Select
       header="Waluta wejściowa:"

@@ -1,5 +1,5 @@
 import { createGlobalStyle } from "styled-components";
-import backgroundImage from "./images/backgroundImage.jpeg"
+import backgroundImage from "./images/backgroundImage.jpeg";
 
 export const GlobalStyle = createGlobalStyle`
   html {
@@ -21,4 +21,4 @@ export const GlobalStyle = createGlobalStyle`
     font-family: "Oswald", sans-serif;
   }
 
-`
+`;
