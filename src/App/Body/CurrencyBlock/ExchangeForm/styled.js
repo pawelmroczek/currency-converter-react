@@ -1,9 +1,10 @@
 import styled from "styled-components";
-import { Date } from "../Clock/styled";
+import { Date } from "../../Clock/styled";
 
 
 export const Symbol = styled.span`
   color: ${({ theme }) => theme.colors.doveGray};
+  margin-left:10px;
 `;
 
 export const Wrapper = styled.div`
@@ -14,13 +15,14 @@ export const Wrapper = styled.div`
   backdrop-filter: blur(2px);
   width: 80%;
   padding: 30px;
+  flex-grow:0;
 `;
 
 export const Input = styled.input`
   width: 150px;
   height: 80px;
   margin-top: 20px;
-  padding: 0px 0px 0px 10px;
+  padding-left:15px;
 `;
 
  export const BankInfo =styled(Date)`

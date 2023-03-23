@@ -5,7 +5,7 @@ const ExchangeForm = ({ inputCurrency, outputCurrency, rate, time, date }) => {
   const [inputValue, setInput] = useState(0);
 
   return (
-    <Wrapper>
+    <>
       {time}
       <form>
         <div>
@@ -38,7 +38,7 @@ const ExchangeForm = ({ inputCurrency, outputCurrency, rate, time, date }) => {
         aktualne na dzień: <Span>{date}</Span>
         </BankInfo>
       </form>
-    </Wrapper>
+    </>
   );
 };
 
