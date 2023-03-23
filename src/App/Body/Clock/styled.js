@@ -5,4 +5,5 @@ export const Date = styled.div`
   text-align: right;
   font-size: 20px;
   color: ${({ theme }) => theme.colors.emperor};
+  margin:15px;
 `;
