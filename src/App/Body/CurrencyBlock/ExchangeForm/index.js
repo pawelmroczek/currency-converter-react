@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Symbol, Wrapper, Input, BankInfo, Span } from "./styled";
+import { Symbol, Input, BankInfo, Span } from "./styled";
 
 const ExchangeForm = ({ inputCurrency, outputCurrency, rate, time, date }) => {
   const [inputValue, setInput] = useState(0);
