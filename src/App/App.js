@@ -1,15 +1,15 @@
 import Header from "./Header";
 import Footer from "./Footer";
-import Body from "./Body";
-import { Main, Wrapper } from "./styled";
+import Main from "./Main";
+import { StyledMain, Wrapper } from "./styled";
 
 function App() {
   return (
     <Wrapper>
       <Header />
-      <Main>
-        <Body />
-      </Main>
+      <StyledMain>
+        <Main />
+      </StyledMain>
       <Footer />
     </Wrapper>
   );

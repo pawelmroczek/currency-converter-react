@@ -1,6 +1,6 @@
 import { StatusDiv } from "../styled";
 
-const Problem = () => (
+const Error = () => (
   <StatusDiv problem={true}>
     <h2>Hmm... Coś poszło nie tak.</h2>
     <p>
@@ -10,4 +10,4 @@ const Problem = () => (
   </StatusDiv>
 );
 
-export default Problem;
+export default Error;

@@ -2,6 +2,9 @@ import axios from "axios";
 import { useEffect, useState } from "react";
 import currencyBase from "./CurrencyBlock/currency";
 
+const API_URL =
+  "https://api.exchangerate.host/latest?base=PLN&symbols=USD,EUR,CHF";
+
 export const useAPI = () => {
   const [rateData, setRateData] = useState({
     status: "loading",
@@ -12,19 +15,14 @@ export const useAPI = () => {
   useEffect(() => {
     const catchData = async () => {
       try {
-        const response = await axios.get(
-          "https://api.exchangerate.host/latest?base=PLN&symbols=USD,EUR,CHF"
-        );
-        const rates = response.data.rates;
+        const { data } = await axios.get(API_URL);
+        const rates = data.rates;
         setRateData({
-          currency: currencyBase.map((curr) => {
-            if (rates[curr.short]) {
-              return { ...curr, toPLN: rates[curr.short] };
-            }
-            return curr;
-          }),
-          date: response.data.date,
-          status: "loaded",
+          currency: currencyBase.map((curr) =>
+            rates[curr.short] ? { ...curr, toPLN: rates[curr.short] } : curr
+          ),
+          date: data.date,
+          status: "success",
         });
       } catch (error) {
         setRateData({ status: "error" });

@@ -6,7 +6,7 @@ export const Wrapper = styled.div`
   height: 1000px;
 `;
 
-export const Main = styled.main`
+export const StyledMain = styled.main`
   width: 100%;
   display: flex;
   flex-wrap: wrap;
